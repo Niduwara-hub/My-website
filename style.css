@@ -1,80 +1,248 @@
-/* A simple css reset */
-body,
-html {
+/* ================================
+   RESET
+================================ */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    /* The Font Family- Really important!! */
-    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
 
-/* reset for images to ensure they ar 100% of the parent container width */
-img {
-    width: 100%;
+html {
+    scroll-behavior: smooth;
 }
 
-/* The hero section styling- use your OWN Hero Image URL here */
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b12;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   HERO
+================================ */
 .hero {
-    background-image: url('images/gda.jpg');
-    height: 25vh;
+    height: 45vh;
+    min-height: 300px;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)),
+        url("images/gda.jpg");
+
     background-size: cover;
     background-position: center;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+
     text-align: center;
+
+    border-bottom: 3px solid #7c3cff;
+
     position: relative;
+    overflow: hidden;
 }
 
-/* BIG text styling for the hero section text */
+/* Purple glow */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #7c3cff;
+    opacity: 0.15;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+/* Hero text */
 .hero-text {
-    font-size: 4em;
+    position: relative;
+    z-index: 2;
+
+    font-size: clamp(2.2rem, 6vw, 5rem);
     font-weight: bold;
+
+    text-shadow:
+        0 0 10px #7c3cff,
+        0 0 25px #7c3cff,
+        0 0 50px #7c3cff;
+
+    padding: 20px;
 }
 
-/* nice big font on a banner style background */
-.topic-title{
-    color: white;
-    font-size: 2em;
-    padding: 0.1em 3em;
-    background-color: rgb(37, 36, 36);
-}
 
-/* Three column grid with a nice big gap */
-.topic-content{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6em;
-    /* bring the whole section in off the sides of the page */
-    width: 70%;
-    /* top margin of 3em and center right/left */
-    margin: 3em auto;
-}
-
-/* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.topic-card{
-    background-color: rgb(65, 62, 62);
-    color: rgb(255, 255, 255);
-    padding: 1em;
-    border-radius: 2.5em;
-    
-}
-
-/* Styling for the topic card titles */
-.topic-card-text{
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    /* center align text */
+/* ================================
+   TOPIC TITLE
+================================ */
+.topic-title {
     text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.topic-title h1 {
+    display: inline-block;
+
+    font-size: 2.5rem;
+
+    color: white;
+
+    padding: 12px 30px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #171722,
+        #242438
+    );
+
+    border: 1px solid #7c3cff;
+
+    box-shadow:
+        0 0 15px rgba(124, 60, 255, 0.5);
 }
 
 
-/* Styling for a footer section to take a bit of spcae at the bottom of the page */
-.footer{
-    background-color: rgb(65, 62, 62);
+/* ================================
+   IMAGE GRID
+================================ */
+.topic-content {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: 35px;
+
+    width: 85%;
+    max-width: 1100px;
+
+    margin: 40px auto 80px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+.topic-card {
+    background: linear-gradient(
+        145deg,
+        #181824,
+        #101018
+    );
+
+    border: 1px solid #29293b;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Card hover */
+.topic-card:hover {
+    transform: translateY(-10px) scale(1.02);
+
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 20px rgba(124, 60, 255, 0.5),
+        0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ================================
+   IMAGES
+================================ */
+.topic-card img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Image zoom */
+.topic-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ================================
+   CARD TEXT
+================================ */
+.topic-card-text {
+    text-align: center;
+
+    font-size: 1.4rem;
+
+    margin: 18px 5px 8px;
+
     color: white;
-    text-align: right;
-    padding: 3em 3em;
+
+    text-shadow:
+        0 0 8px rgba(124, 60, 255, 0.7);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background: #08080d;
+
+    color: #888;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-top: 1px solid #272733;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+
+    .hero {
+        height: 35vh;
+    }
+
+    .topic-title h1 {
+        font-size: 2rem;
+    }
+
+    .topic-content {
+        width: 90%;
+        gap: 25px;
+    }
+
 }
