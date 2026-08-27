@@ -20,57 +20,23 @@ body {
 
 
 /* ================================
-   HERO
+   HERO BANNER
 ================================ */
 .hero {
-    height: 45vh;
-    min-height: 300px;
+    height: 350px;
 
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)),
-        url("images/gda.jpg");
+    background-image: url("images/niduwara_showcase_banner.jpg");
 
     background-size: cover;
     background-position: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
 
     border-bottom: 3px solid #7c3cff;
 
     position: relative;
     overflow: hidden;
-}
 
-/* Purple glow */
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: #7c3cff;
-    opacity: 0.15;
-    filter: blur(120px);
-    border-radius: 50%;
-}
-
-/* Hero text */
-.hero-text {
-    position: relative;
-    z-index: 2;
-
-    font-size: clamp(2.2rem, 6vw, 5rem);
-    font-weight: bold;
-
-    text-shadow:
-        0 0 10px #7c3cff,
-        0 0 25px #7c3cff,
-        0 0 50px #7c3cff;
-
-    padding: 20px;
+    box-shadow:
+        0 5px 25px rgba(124, 60, 255, 0.25);
 }
 
 
@@ -103,6 +69,9 @@ body {
 
     box-shadow:
         0 0 15px rgba(124, 60, 255, 0.5);
+
+    text-shadow:
+        0 0 8px #7c3cff;
 }
 
 
@@ -233,7 +202,11 @@ body {
 @media (max-width: 600px) {
 
     .hero {
-        height: 35vh;
+        height: 220px;
+    }
+
+    .topic-title {
+        padding-top: 35px;
     }
 
     .topic-title h1 {
