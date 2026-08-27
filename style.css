@@ -8,20 +8,14 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     font-family: Arial, sans-serif;
-
     background: #0b0b12;
-
     color: white;
-
-    min-height: 100vh;
 }
 
 
@@ -31,24 +25,29 @@ body {
 
 .hero {
     width: 100%;
+    padding: 0;
+    margin: 0;
 
     background: #08080d;
 
     border-bottom: 3px solid #7c3cff;
 
-    overflow: hidden;
+    line-height: 0;
 
     box-shadow:
         0 5px 25px rgba(124, 60, 255, 0.35);
 }
 
-
 .hero img {
-    width: 100%;
+    display: block;
 
+    width: 100%;
     height: auto;
 
-    display: block;
+    margin: 0;
+    padding: 0;
+
+    border: none;
 }
 
 
@@ -61,7 +60,6 @@ body {
 
     padding: 45px 20px 20px;
 }
-
 
 .topic-title h1 {
     display: inline-block;
@@ -103,7 +101,6 @@ body {
     gap: 35px;
 
     width: 85%;
-
     max-width: 1100px;
 
     margin: 40px auto 80px;
@@ -111,7 +108,7 @@ body {
 
 
 /* ================================
-   IMAGE CARDS
+   CARDS
 ================================ */
 
 .topic-card {
@@ -169,8 +166,7 @@ body {
 
     object-fit: cover;
 
-    transition:
-        transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 
@@ -217,7 +213,6 @@ body {
     border-top: 1px solid #272733;
 }
 
-
 .footer p {
     font-size: 0.9rem;
 }
@@ -233,15 +228,12 @@ body {
         padding-top: 35px;
     }
 
-
     .topic-title h1 {
         font-size: 2rem;
     }
 
-
     .topic-content {
         width: 90%;
-
         gap: 25px;
     }
 
