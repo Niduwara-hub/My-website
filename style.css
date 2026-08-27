@@ -1,20 +1,26 @@
 /* ================================
    RESET
 ================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     font-family: Arial, sans-serif;
+
     background: #0b0b12;
+
     color: white;
+
     min-height: 100vh;
 }
 
@@ -22,31 +28,40 @@ body {
 /* ================================
    HERO BANNER
 ================================ */
+
 .hero {
-    height: 350px;
+    width: 100%;
 
-    background-image: url("images/niduwara_showcase_banner.jpg");
-
-    background-size: cover;
-    background-position: center;
+    background: #08080d;
 
     border-bottom: 3px solid #7c3cff;
 
-    position: relative;
     overflow: hidden;
 
     box-shadow:
-        0 5px 25px rgba(124, 60, 255, 0.25);
+        0 5px 25px rgba(124, 60, 255, 0.35);
+}
+
+
+.hero img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
 }
 
 
 /* ================================
    TOPIC TITLE
 ================================ */
+
 .topic-title {
     text-align: center;
-    padding: 50px 20px 20px;
+
+    padding: 45px 20px 20px;
 }
+
 
 .topic-title h1 {
     display: inline-block;
@@ -78,17 +93,17 @@ body {
 /* ================================
    IMAGE GRID
 ================================ */
+
 .topic-content {
     display: grid;
 
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(280px, 1fr)
-    );
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
 
     gap: 35px;
 
     width: 85%;
+
     max-width: 1100px;
 
     margin: 40px auto 80px;
@@ -96,8 +111,9 @@ body {
 
 
 /* ================================
-   CARDS
+   IMAGE CARDS
 ================================ */
+
 .topic-card {
     background: linear-gradient(
         145deg,
@@ -123,7 +139,10 @@ body {
 }
 
 
-/* Card hover */
+/* ================================
+   CARD HOVER
+================================ */
+
 .topic-card:hover {
     transform: translateY(-10px) scale(1.02);
 
@@ -136,8 +155,9 @@ body {
 
 
 /* ================================
-   IMAGES
+   CARD IMAGES
 ================================ */
+
 .topic-card img {
     width: 100%;
 
@@ -149,11 +169,15 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease;
 }
 
 
-/* Image zoom */
+/* ================================
+   IMAGE HOVER
+================================ */
+
 .topic-card:hover img {
     transform: scale(1.04);
 }
@@ -162,6 +186,7 @@ body {
 /* ================================
    CARD TEXT
 ================================ */
+
 .topic-card-text {
     text-align: center;
 
@@ -179,6 +204,7 @@ body {
 /* ================================
    FOOTER
 ================================ */
+
 .footer {
     background: #08080d;
 
@@ -191,6 +217,7 @@ body {
     border-top: 1px solid #272733;
 }
 
+
 .footer p {
     font-size: 0.9rem;
 }
@@ -199,22 +226,22 @@ body {
 /* ================================
    MOBILE
 ================================ */
-@media (max-width: 600px) {
 
-    .hero {
-        height: 220px;
-    }
+@media (max-width: 600px) {
 
     .topic-title {
         padding-top: 35px;
     }
 
+
     .topic-title h1 {
         font-size: 2rem;
     }
 
+
     .topic-content {
         width: 90%;
+
         gap: 25px;
     }
 
