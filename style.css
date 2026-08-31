@@ -36,7 +36,16 @@ body {
 
     box-shadow:
         0 5px 25px rgba(124, 60, 255, 0.35);
+
+    position: relative;
+
+    overflow: hidden;
 }
+
+
+/* ================================
+   BANNER IMAGE
+================================ */
 
 .hero img {
     display: block;
@@ -48,6 +57,87 @@ body {
     padding: 0;
 
     border: none;
+}
+
+
+/* ================================
+   MAIN BANNER TEXT
+================================ */
+
+.hero::before {
+    content: "NIDUWARA'S\A SHOWCASE WEBSITE";
+
+    white-space: pre;
+
+    position: absolute;
+
+    top: 48%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    text-align: center;
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        5.5rem
+    );
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #7c3cff,
+        0 0 20px #7c3cff,
+        0 0 35px #7c3cff;
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   HELLO TEXT
+================================ */
+
+.hero::after {
+    content: "Hello!";
+
+    position: absolute;
+
+    top: 17%;
+    left: 18%;
+
+    z-index: 6;
+
+    color: white;
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+
+    font-size: clamp(
+        1.5rem,
+        3vw,
+        3.5rem
+    );
+
+    font-weight: bold;
+
+    transform: rotate(-8deg);
+
+    text-shadow:
+        0 0 8px #7c3cff,
+        0 0 18px #7c3cff,
+        0 0 30px #7c3cff;
+
+    pointer-events: none;
 }
 
 
@@ -101,6 +191,7 @@ body {
     gap: 35px;
 
     width: 85%;
+
     max-width: 1100px;
 
     margin: 40px auto 80px;
@@ -166,7 +257,8 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease;
 }
 
 
@@ -224,6 +316,18 @@ body {
 
 @media (max-width: 600px) {
 
+    .hero::before {
+        font-size: 2rem;
+
+        letter-spacing: 1px;
+    }
+
+    .hero::after {
+        left: 15%;
+
+        font-size: 1.5rem;
+    }
+
     .topic-title {
         padding-top: 35px;
     }
@@ -234,6 +338,7 @@ body {
 
     .topic-content {
         width: 90%;
+
         gap: 25px;
     }
 
